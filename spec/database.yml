@@ -1,0 +1,4 @@
+sqlite3mem:
+  :adapter: sqlite3
+  :database: "/tmp/validates_absence_of_spec.sqlite3"
+

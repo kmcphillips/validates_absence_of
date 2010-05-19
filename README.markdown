@@ -4,6 +4,7 @@ ValidatesAbsenceOf
 The missing complementary validation to validates_presence_of. Requires the :if option.
 
 Options all work like existing active record validations:
+
 * :in
 * :message
 * :if

@@ -9,7 +9,7 @@ module ValidatesAbsenceOf
       configuration = configuration.merge(attr.extract_options!)
       configuration = configuration.merge(:allow_nil => false, :allow_blank => false, :in => [nil, ''])
 
-      raise(ArgumentError, "An 'if' option is required for validates_absence_of") unless configuration[:if] || configuration[:unless]
+      raise(ArgumentError, "An 'if' or 'unless' option is required for validates_absence_of") unless configuration[:if] || configuration[:unless]
 
       validates_inclusion_of(attr, configuration)
     end

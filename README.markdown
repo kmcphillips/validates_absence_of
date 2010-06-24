@@ -21,4 +21,4 @@ If we have a model with an active boolean column, we only want the deactivated r
     end
 
 
-Copyright (c) 2010 Kevin McPhillips, released under the MIT license
+Copyright (c) 2010 [Kevin McPhillips](github@kevinmcphillips.ca), released under the MIT license

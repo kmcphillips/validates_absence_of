@@ -1,17 +1,6 @@
 require 'rake'
-require 'rake/testtask'
 require 'rake/rdoctask'
-
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the validates_absence_of plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
+require 'spec/rake/spectask'
 
 desc 'Generate documentation for the validates_absence_of plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
@@ -21,3 +10,13 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+
+desc "Run the specs under spec"
+Spec::Rake::SpecTask.new do |t|
+  t.spec_files = FileList['spec/*_spec.rb']
+end
+
+desc "Default task is to run specs"
+task :default => :spec
+
